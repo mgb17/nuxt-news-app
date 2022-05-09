@@ -3,10 +3,10 @@
     <div>
       <logo/>
       <h1 class="title">
-        kose-yazisi-uygulamasi
+        news-app
       </h1>
       <h2 class="subtitle">
-        My kickass Nuxt.js project
+        My Nuxt.js project
       </h2>
       <div class="links">
         <a
