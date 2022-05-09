@@ -1,5 +1,40 @@
 [
   {
+    "name": "admin",
+    "path": "/admin",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\admin\\\\index.vue",
+    "chunkName": "pages/admin/index",
+    "_name": "_1fe6b02a"
+  },
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\posts\\\\index.vue",
+    "chunkName": "pages/posts/index",
+    "_name": "_955b1632"
+  },
+  {
+    "name": "admin-new-post",
+    "path": "/admin/new-post",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\admin\\\\new-post.vue",
+    "chunkName": "pages/admin/new-post",
+    "_name": "_d04cb0b8"
+  },
+  {
+    "name": "admin-postId",
+    "path": "/admin/:postId",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\admin\\\\_postId\\\\index.vue",
+    "chunkName": "pages/admin/_postId/index",
+    "_name": "_4d622962"
+  },
+  {
+    "name": "posts-postId",
+    "path": "/posts/:postId",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\posts\\\\_postId\\\\index.vue",
+    "chunkName": "pages/posts/_postId/index",
+    "_name": "_3019f9d3"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\index.vue",
