@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="container d-flex justify-content-center align-items-center">
-            <button class="btn btn-dark">Yeni Bir Yazı Ekle</button>
+            <button @click="$router.push('/admin/new-post')" class="btn btn-dark">Yeni Bir Yazı Ekle</button>
         </div>
         <div>
-            <PostList />
+            <PostList :isAdmin="true" />
         </div>
     </div>
 </template>
