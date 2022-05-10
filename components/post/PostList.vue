@@ -23,7 +23,7 @@ export default {
     },
     posts: {
       required: true,
-      default: []
+      default: false
     }
   }
 }
