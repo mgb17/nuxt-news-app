@@ -14,8 +14,8 @@
                 </nuxt-link>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0">
-                <nuxt-link to="/admin" class="nav-item mr-sm-2" >
-                    Admin
+                <nuxt-link to="/admin"  >
+                   <h4 class="nav-item mr-sm-2">Admin</h4> 
                 </nuxt-link>
             </ul>
         </div>

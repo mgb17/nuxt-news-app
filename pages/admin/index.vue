@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container d-flex justify-content-center align-items-center">
-            <button @click="$router.push('/admin/new-post')" class="btn btn-dark">Yeni Bir Yazı Ekle</button>
+            <button @click="$router.push('/admin/new-post')" class="btn btn-dark">Add New Post</button>
         </div>
         <div>
             <PostList 
@@ -15,6 +15,9 @@
 import PostList from "@/components/post/PostList.vue"
 
 export default {
+    head: {
+        title: 'My Posts'
+    },
     layout: "admin",
     components: {
         PostList
