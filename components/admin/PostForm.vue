@@ -29,20 +29,36 @@
 
 <script>
 export default {
-    data() {
-        return {
-            post: {
-                title: null,
-                subTitle: null,
-                author: null,
-                text: null
-            }
-        }
+    // data() {
+    //     return {
+    //         post: {
+    //             title: null,
+    //             subTitle: null,
+    //             author: null,
+    //             text: null
+    //         }
+    //     }
+    // },
+    created() {
+        this.post = this.post ? this.post : this.post.default
+            
     },
     props: {
         isEdit: {
             type: Boolean,
             required: false,
+        },
+        post: {
+            type: Object,
+            required: false,
+            default() {
+                return {
+                    title: null,
+                    subTitle: null,
+                    author: null,
+                    text: null
+                }
+            }
         }
     },
     methods: {

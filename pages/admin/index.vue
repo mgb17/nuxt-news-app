@@ -4,7 +4,9 @@
             <button @click="$router.push('/admin/new-post')" class="btn btn-dark">Yeni Bir Yazı Ekle</button>
         </div>
         <div>
-            <PostList :isAdmin="true" />
+            <PostList 
+                :posts="takenPosts"
+                :isAdmin="true" />
         </div>
     </div>
 </template>
@@ -16,6 +18,11 @@ export default {
     layout: "admin",
     components: {
         PostList
+    },
+    computed: {
+        takenPosts() {
+            return this.$store.getters.getPosts
+        }
     }
 }
 

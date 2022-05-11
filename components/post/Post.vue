@@ -1,6 +1,7 @@
 <template>
     <div class="card mr-3 mb-3 card-success" style="width: 18rem;">
         <div class="card-body">
+            <h5 class="card-title">{{ post.author }}</h5>
             <h5 class="card-title">{{ post.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ post.subTitle }}</h6>
             <p class="card-text">{{ post.text }}</p>
