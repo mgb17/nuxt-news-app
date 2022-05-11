@@ -1,10 +1,24 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_6784dc16"
+  },
+  {
     "name": "admin",
     "path": "/admin",
     "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\admin\\\\index.vue",
     "chunkName": "pages/admin/index",
     "_name": "_1fe6b02a"
+  },
+  {
+    "name": "auth",
+    "path": "/auth",
+    "component": "C:\\\\Projects\\\\udemy\\\\nuxt\\\\blog-app\\\\pages\\\\auth\\\\index.vue",
+    "chunkName": "pages/auth/index",
+    "_name": "_09a7de92"
   },
   {
     "name": "posts",

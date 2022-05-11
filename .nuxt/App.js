@@ -8,6 +8,8 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '..\\assets\\style\\transition.css'
 
+import '..\\assets\\style\\bootstrap.min.css'
+
 import _77068119 from '..\\layouts\\admin.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
 

@@ -15,7 +15,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://bootswatch.com/4/sketchy/bootstrap.min.css'}
+      // { rel: 'stylesheet', href: 'https://bootswatch.com/4/sketchy/bootstrap.min.css'}
     ],
     script : [
       // { src: 'https://cdn..'}
@@ -36,7 +36,8 @@ module.exports = {
   */
   css: [
     // "~/assets/style/bootstrap.min.css"
-    "~assets/style/transition.css"
+    "~assets/style/transition.css",
+    "~assets/style/bootstrap.min.css"
   ],
 
   // dev: false,

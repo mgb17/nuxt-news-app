@@ -1,16 +1,84 @@
 <template>
   <div>
+    
+    <!-- Posts  -->
     <div>
-      <PostList :posts="fetchedPosts"/>
+      <!-- <PostList :posts="fetchedPosts"/> -->
     </div>
-    <About/>
+
+    <div class="container pt-3">
+      <div class="row">
+        <div class="col-md-6 offset-3 pt-3 card border border-success shadow">
+          <h3 class="text-center mb-3 mt-3">localStorage</h3>
+          <input type="text" class="form-control" v-model="storageValue">
+          <div class="button-container mt-3 mb-3">
+            <button @click="setValue" class="btn btn-success">Set Value</button>
+            <button @click="getValue" class="btn btn-success">Get Value</button>
+            <button @click="deleteValue" class="btn btn-success">Delete Value</button>
+          </div>
+          <div class="border p-1 mb-3 border-secondary d-flex justify-content-center align-items-center">
+            <p class="m-0"> <strong>localStorage value :</strong> {{ fromStorage }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-6 offset-3 pt-3 card border border-primary shadow">
+          <h3 class="text-center mb-3 mt-3">Cookie </h3>
+          <input type="text" class="form-control" v-model="cookieValue">
+          <div class="button-container mt-3 mb-3">
+            <button @click="setCookie" class="btn btn-primary">Set Cookie Value</button>
+            <button @click="getCookie" class="btn btn-primary">Get Cookie Value</button>
+            <button @click="removeCookie" class="btn btn-primary">Remove Cookie</button>
+          </div>
+          <div class="border p-1 mb-3 border-secondary d-flex justify-content-center align-items-center">
+            <p class="m-0"> <strong>Cookie value :</strong> {{ fromCookie }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+    <!-- <About/> -->
   </div>
 </template>
 
 <script>
-
+import Cookie from "js-cookie"
 
 export default {
+    data() {
+        return {
+          storageValue : null,
+          cookieValue: null,
+          fromStorage: null,
+          fromCookie : null
+        }
+    },
+    methods: {
+      setValue() {
+          localStorage.setItem("authKey", this.storageValue)
+      },
+      getValue() {
+          this.fromStorage = localStorage.getItem("authKey")
+      },
+      deleteValue() {
+          localStorage.removeItem("authKey")
+      },
+
+      setCookie(){
+          Cookie.set("authKey", this.cookieValue)
+      },
+      getCookie(){
+          this.fromCookie = Cookie.get("authKey")
+      },
+      removeCookie() {
+          Cookie.remove("authKey")
+      }
+    },
+    computed: {
+      fetchedPosts() {
+        return this.$store.getters['posts/getPosts']
+      }
+    },
     // components: {
     //     PostList,
     //     About
@@ -21,14 +89,6 @@ export default {
     //     fetchedPosts : []
     //   }
     // },
-    computed: {
-      fetchedPosts() {
-        return this.$store.getters.getPosts
-      }
-    },
-    created() {
-      // this.$store.dispatch("setPosts", this.fetchedPosts )
-    },
 
     // fetch(context) {
     //   return new Promise((resolve, reject) => {
@@ -88,5 +148,4 @@ export default {
     //     })
     //   }
 }
-
 </script>

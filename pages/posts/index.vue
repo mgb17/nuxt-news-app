@@ -15,7 +15,8 @@ export default {
     },
     computed: {
         fetchedPosts() {
-            return this.$store.getters.getPosts
+            return this.$store.getters['posts/getPosts']
+
         }
     }
 }
