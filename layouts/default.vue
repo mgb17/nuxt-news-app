@@ -11,7 +11,7 @@ import Header from "@/components/common/Header"
 import Banner from "@/components/common/Banner"
 
 export default {
-    middleware: "auth",
+    middleware: ["session-control","auth"],
 
     components: {
       Header,

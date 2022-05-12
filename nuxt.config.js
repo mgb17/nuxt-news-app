@@ -42,9 +42,9 @@ module.exports = {
 
   // dev: false,
   
-  // env: {
-  //   baseURL: "https://nuxt-blog-app-3ebfb-default-rtdb.europe-west1.firebasedatabase.app/posts.json"
-  // },
+  env: {
+    firebaseAPIKey: "AIzaSyAqEAs6se1m2viLM7LDUHer4Iuc1uQGYO8"
+  },
 
   // router : {
   //   extendRoutes(routes, resolve) {

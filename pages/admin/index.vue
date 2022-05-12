@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         takenPosts() {
-            return this.$store.getters['posts/getPosts']
+            return this.$store.getters.getPosts
         }
     }
 }

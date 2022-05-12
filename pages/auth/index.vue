@@ -31,6 +31,8 @@
     </div>
 </template>
 <script>
+import axios from "axios"
+
   export default {
     data(){
       return {
@@ -43,7 +45,20 @@
     },
     methods : {
       onSubmit(){
-        console.log(this.user)
+        let authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="
+        if(this.isUser) {
+          authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
+        }
+
+        axios.post(authLink + process.env.firebaseAPIKey, {
+            email: this.user.email, 
+            password: this.user.password, 
+            returnSecureToken: true
+        }).then(res => {
+            this.$store.dispatch("login", res.data.idToken)
+            this.$router.push("/")
+        })
+
       }
     }
   }
