@@ -15,7 +15,13 @@ const createStore = () => {
             setAuthKey(state, authKey) {
                 state.authKey = authKey
             },
+            clearAuthKey(state) {
+                Cookie.remove("authKey")
+                localStorage.removeItem("authKey")
+                state.authKey = null
+            },
 
+            // -- POSTS ---
             setPost(state, posts) {
                 state.fetchedPosts = posts
             }
@@ -26,12 +32,10 @@ const createStore = () => {
             initAuth(vuexContext, req) {
                 let token;
                 if(req) {
-
                     // on server side
                     if(!req.headers.cookie) {
                         return;
                     }
-
                     // get Token over Cookie
                     token = req.headers.cookie.split(";").find(c => c.trim().startsWith("authKey"))
                     if(token) {
@@ -43,7 +47,6 @@ const createStore = () => {
                         return
                     }
                 }
-
                 vuexContext.commit("setAuthKey", token)
             },
             login(vuexContext, authKey) {
@@ -51,7 +54,11 @@ const createStore = () => {
                 localStorage.setItem("authKey", authKey)
                 vuexContext.commit("setAuthKey", authKey)
             },
+            logout(vuexContext) {
+                vuexContext.commit("clearAuthKey")
+            },
 
+            // --- POSTS ---
             // only one time run on the server side
             nuxtServerInit(vuexContext, payload) {
                 return payload.app.$axios.get("https://nuxt-blog-app-3ebfb-default-rtdb.europe-west1.firebasedatabase.app/posts.json")

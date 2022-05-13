@@ -10,6 +10,7 @@
 import PostList from "@/components/post/PostList.vue"
 
 export default {
+    middleware: ["session-control","auth"],
     components: {
         PostList
     },

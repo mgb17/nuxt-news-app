@@ -15,9 +15,26 @@
             </ul>
             <ul class="navbar-nav my-2 my-lg-0">
                 <nuxt-link to="/admin"  >
-                   <h4 class="nav-item mr-sm-2">Admin</h4> 
+                   <h4 class="nav-item mr-sm-2">Admin</h4>
+                </nuxt-link>
+            </ul>
+            <ul v-if="this.$store.getters.isAuthenticated" class=" my-2 my-lg-0">
+                <nuxt-link to="/auth"  >
+                   <a @click.prevent="logout" class="mr-sm-2 bg-success p-2 card">Log out</a>
                 </nuxt-link>
             </ul>
         </div>
     </nav>
 </template>
+
+<script>
+export default {
+    methods: {
+        logout() {
+            this.$store.dispatch("logout")
+            this.$router.push("/auth")
+        }
+    }
+}
+
+</script>

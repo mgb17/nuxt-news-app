@@ -45,6 +45,8 @@
 import Cookie from "js-cookie"
 
 export default {
+    middleware: ["session-control","auth"],
+
     data() {
         return {
           storageValue : null,
